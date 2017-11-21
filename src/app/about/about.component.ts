@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
+import {DataService} from "../data.service";
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -33,20 +35,27 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class AboutComponent implements OnInit {
 
   goalText: string = 'My first life goal';
-  goals = ['first item', 'second item'];
+  goals = [];
+  pets: any;
 
-  constructor() {}
+  constructor(private _data: DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._data.goal.subscribe(res => this.goals = res);
+    this._data.changeGoal(this.goals);
+    this.pets = this._data.testdata;
+  }
 
   addItem(){
     if(this.goalText.length >0)
       this.goals.push(this.goalText);
     this.goalText = '';
+    this._data.changeGoal(this.goals);
   }
 
   removeItem(i) {
     this.goals.splice(i, 1);
+    this._data.changeGoal(this.goals);
   }
 
 }

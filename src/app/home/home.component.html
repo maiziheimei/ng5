@@ -1,3 +1,5 @@
+
+
 <div class="container color-dark">
   <div class="col">
     <p>Readme</p>
@@ -31,6 +33,8 @@
 
   </div>
 
+
+
   <div class="col">
 
     <br><textarea class ="textarea ng-valid" name="item" rows="5" cols="50" placeholder="Vision ..."></textarea><br>
@@ -53,7 +57,23 @@
 
   </div>
 
+  <div class="col">
+  <p>new data goes to here:</p>
 
+  <ul>
+    <li *ngFor="let goal of goals">
+      {{goal}}
+    </li>
+  </ul>
+
+  <!--<table>-->
+    <!--<thead>-->
+    <!--<tr *ngFor="let goal of goals">-->
+      <!--<th>{{goal}}</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+  <!--</table>-->
+</div>
 </div>
 
 

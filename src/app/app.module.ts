@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
+import {DataService} from "./data.service";
+import { HttpModule } from '@angular/http';
+
 
 
 @NgModule({
@@ -21,9 +24,10 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+[
+  {"id":1,
+    "name": "angular dog",
+    "gender": "male"
+  },
+  {"id":2,
+    "name": "luck cat",
+    "gender": "female"
+  },
+  {"id":3,
+    "name": " afu fish",
+    "gender": "male"
+  }
+
+]
